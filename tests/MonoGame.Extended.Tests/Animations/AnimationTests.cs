@@ -60,6 +60,17 @@ public class AnimationTests
     }
 
     [Fact]
+    public void Play_ShouldStartAnimation()
+    {
+        _animationController.Stop();
+        var result = _animationController.Play();
+
+        Assert.True(result);
+        Assert.True(_animationController.IsAnimating);
+        Assert.False(_animationController.IsPaused);
+    }
+
+    [Fact]
     public void Pause_ShouldPauseAnimation()
     {
         _animationController.Play();
