@@ -115,6 +115,7 @@ public class AnimationController : IAnimationController
         }
 
         IsAnimating = true;
+        IsPaused = false;
         _internalFrame = startingFrame;
         CurrentFrameTimeRemaining = _definition.Frames[_internalFrame].Duration;
         return true;
